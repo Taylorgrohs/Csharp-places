@@ -19,7 +19,7 @@ namespace PlacesYouBeen
         return View["place_form.cshtml"];
       };
       Post["/places"] = _ => {
-        Place newPlace = new Place(Request.Form["new-city"]);
+        Place newPlace = new Place(Request.Form["new-city"], Request.Form["new-state"], Request.Form["new-year"]);
         List<Place> allPlaces = Place.GetAll();
         return View["places.cshtml", allPlaces];
       };
